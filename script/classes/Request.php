@@ -14,7 +14,7 @@ class Request
 		$this->user->login($d);
 	}
 	function user_registration($d){
-		var_dump($d);
+		
 	}
 }
  ?>
