@@ -2,7 +2,7 @@
 namespace classes;
 class Connection
 {
-	protected $con;
+	public $con;
 	function __construct()
 	{
 		global $db;

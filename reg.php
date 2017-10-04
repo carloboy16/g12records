@@ -30,7 +30,7 @@
   	</div>
     <div class="form-group">
       <label for="exampleInputEmail1">Leadership<span class="required">*</span></label>
-    <select class="form-control" name="level" required>
+    <select class="form-control" name="leadership" required>
     <option value="1">Pastor</option>
     <option value="2">Primary Leader</option>
     <option value="3">Cell Leader</option>

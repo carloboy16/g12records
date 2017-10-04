@@ -22,24 +22,35 @@ $(function(){
 		})
 
 	if(error == 0 ){
-		console.log(error);
+		// console.log(error);
 		data = new FormData(this);
 		data.append("action","user_registration");
 		image =records.get_loader()[0].outerHTML;
 		$(this).find('button.register').html(image + "Registering Leader");
 		$(this).find('button.register').attr("disable");
-		$(" .overlay-popup").show();
+		
 		records.api(data)
 		.done(function(e){
-			console.log(e);
+			// console.log(e);
+			if(e.result=="success"){
+				$(".overlay-popup").fadeIn();
+				$(".overlay-popup .message").html('user is '+e.username+" successfully registered!");
+			}
 		})
 	}
 	})
 
-
+	var istyping;
 	$("input.username").keyup(function(){
-		setTimeout(function(){
-
-		})
+	clearTimeout(istyping);
+	istyping = setTimeout(function(){
+		
+	},1100)
 	});
+
+
+	$(".overlay-popup").click(function(e){
+		// e.stopImmediatePropagation();
+		$(this).fadeOut();
+	})
 })
