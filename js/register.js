@@ -1,4 +1,6 @@
 $(function(){
+	useravailability=$(".username-availability");
+	loader_image =records.get_loader()[0].outerHTML;
 	$("form.register").submit(function(e){
 		e.preventDefault();
 		error= 0;
@@ -23,10 +25,13 @@ $(function(){
 
 	if(error == 0 ){
 		// console.log(error);
-		data = new FormData(this);
+	if(useravailability.attr('available')=="false"){
+		return false;
+	}
+	    data = new FormData(this);
 		data.append("action","user_registration");
-		image =records.get_loader()[0].outerHTML;
-		$(this).find('button.register').html(image + "Registering Leader");
+		
+		$(this).find('button.register').html(loader_image + "Registering Leader");
 		$(this).find('button.register').attr("disable");
 		
 		records.api(data)
@@ -42,10 +47,26 @@ $(function(){
 
 	var istyping;
 	$("input.username").keyup(function(){
+		_this = $(this)
 	clearTimeout(istyping);
 	istyping = setTimeout(function(){
-		
-	},1100)
+		useravailability.html(loader_image + 'checking availability...');
+		data = new FormData();
+		data.append('username',_this.val());
+		data.append('action',"check_username");
+		records.api(data)
+		.done(function(e){
+			console.log(e.result);
+			if(e.result=="available"){
+				useravailability.attr('available','true');
+			}else{
+				useravailability.attr('available','false');
+			}
+
+			useravailability.html(e.message);
+			
+		})
+	},1000);
 	});
 
 

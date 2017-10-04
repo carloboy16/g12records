@@ -21,7 +21,7 @@
   	<div class="form-group">
     <label for="exampleInputEmail1">USERNAME<span class="required">*</span></label>
     <input type="username" name="username" class="form-control username" id="exampleInputEmail1" placeholder="USERNAME" required>
-    <div class="username-availability"></div>
+    <div class="username-availability" available=false></div>
   	</div>
 
   	<div class="form-group">

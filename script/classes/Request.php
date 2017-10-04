@@ -15,5 +15,8 @@ class Request
 	function user_registration($d){	
 		$this->user->registration($d);
 	}
+	function check_username($d){
+		$this->user->check_username($d);
+	}
 }
  ?>

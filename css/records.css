@@ -87,3 +87,7 @@ span.required{
     padding: 15px;
 
 }
+.username-availability img.img-responsive.records-official-loader {
+    width: 30px;
+    display: inline-block;
+}

@@ -34,6 +34,29 @@ class User
 		header("Content-type:application/json");
 		echo json_encode($stat);
 	}
+	function check_username($d){
+	   extract($d);
+	   sleep(2);
+	   $q='SELECT username FROM members where username=?';
+	   $s = $this->con->prepare($q);
+	   $s->bind_param('s',$username);
+	   $s->execute();
+	   $res = $s->get_result();
+	   /*while ($r = $res->fetch_assoc()) {
+	   var_dump($r);
+	   }*/
+	   $data = array();
+	   if($res->num_rows=='1'){
+	   	$data['result'] = "not avaiable";
+	   	$data['message'] = "username not available";
+	   }else{
+	   	$data['result'] = "avaiable";
+	   	$data['message'] = "username available";
+	   }
+
+	  header("Content-type:application/json");
+	  echo json_encode($data);
+	}
 	function load(){
 		return new self();
 	}
