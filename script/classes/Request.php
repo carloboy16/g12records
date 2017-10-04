@@ -8,13 +8,13 @@ class Request
 	{
 		$this->con = \classes\Connection::load();
 		$this->user = \classes\User::load();
-		// var_dump($this->user->login());
+		
 	}
 	function login($d){
 		$this->user->login($d);
 	}
 	function user_registration($d){
-		
+
 	}
 }
  ?>
