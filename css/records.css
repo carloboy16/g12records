@@ -1,0 +1,89 @@
+@font-face{
+	font-family: rail;
+	src:url(../fonts/Raleway-Regular.ttf);
+}
+*{
+	font-family: rail;
+	color: #777;
+	letter-spacing: 0.3px;
+}
+.login_container form{
+	width: 400px;
+	border-radius: 5px;
+	margin: auto;
+	margin-top:50px;
+	border: 1px solid #ccc;
+	padding: 15px;
+	max-width: 100%;
+	margin-bottom: 50px;
+
+}
+button.btn.btn-primary.login {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 11px 11px;
+	font-weight: bolder;
+}
+button.btn.btn-primary.login img{
+	max-width: 25px;
+	display: inline-block;
+}
+.login_container{
+	background-color: #e1e1e1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	overflow-y: scroll;
+	box-sizing: border-box;
+}
+.login_container form{
+	background-color: white;
+
+}
+.login_container  .header h2 {
+    text-align: center;
+    font-weight: bolder;
+    margin: 15px 0px;
+    width: 100%;
+}
+.login_container a{
+	text-align: right;
+	display: inline-block;
+	width: 100%;
+	margin: 15px 0px;
+	font-weight: bolder;
+}
+input.error{
+	border: 1px solid red;
+}
+span.required{
+	color: red;
+}
+.overlay-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.50);
+    display: none;
+}
+.overlay-popup .message {
+    width: 500px;
+    max-width: 100%;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px #989898;
+    padding: 15px;
+
+}
